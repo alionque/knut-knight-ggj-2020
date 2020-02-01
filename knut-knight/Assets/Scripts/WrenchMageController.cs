@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class WrenchMageController : MonoBehaviour
 {
+    public string wrenchHoriInputName;
+    public string wrenchVertInputString;
+    public float spd = 5f;
     // Update is called once per frame
     void Update()
     {
-        Vector3 vel = new Vector3();
-        vel.x = 0; //Replace w a remote horizontal check
-        vel.y = 0; //Replace w a remote vertical check
+        Vector3 dir = new Vector3();
+        dir.x = 0; //Replace w a remote horizontal check
+        dir.y = 0; //Replace w a remote vertical check
         if (false) { //Check for place button pressed
             maybeUseSpawnableObject();
         }
 
-        transform.position += vel * Time.deltaTime; //Chose not to use rigid body to allow for tighter movements.
+        transform.position += dir * spd * Time.deltaTime; //Chose not to use rigid body to allow for tighter movements.
     }
 
     private void maybeUseSpawnableObject() {
