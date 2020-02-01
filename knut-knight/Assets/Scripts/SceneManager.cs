@@ -14,7 +14,7 @@ public class SceneTransitionHandler : MonoBehaviour
     void Awake() {
         if (INSTANCE == null) {
             INSTANCE = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this.gameObject);
         } else {
             Destroy(this);
         }

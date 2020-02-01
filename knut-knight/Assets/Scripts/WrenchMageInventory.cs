@@ -6,8 +6,17 @@ public class WrenchMageInventory : MonoBehaviour
 {
     private static WrenchMageInventory INSTANCE;
 
-    public WrenchMageInventory GetInstance() {
+    public static WrenchMageInventory GetInstance() {
         return INSTANCE;
+    }
+
+    private void Awake() {
+        if(INSTANCE != null) {
+            Destroy(this);
+        } else {
+            INSTANCE = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     private List<SpawnablePlatform> inventory = new List<SpawnablePlatform>();
@@ -56,5 +65,10 @@ public class WrenchMageInventory : MonoBehaviour
             currentViewingIndex++;
             currentViewingIndex = currentViewingIndex % inventory.Count;
         }
+    }
+
+    public void resetInventory() {
+        inventory.Clear();
+        currentViewingIndex = -1;
     }
 }
