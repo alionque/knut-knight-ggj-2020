@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DragonController : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip comeHere;
+    public AudioClip killedPlayer;
     private static bool canMove = false;
     public static void START_THE_DRAGON() {
         canMove = true;
@@ -15,6 +18,7 @@ public class DragonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource.PlayOneShot(comeHere);
         canMove = false; //On each level or dragon spawn pause said dragon.
     }
 
@@ -31,6 +35,7 @@ public class DragonController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag.Equals("Player")) {
+            audioSource.PlayOneShot(killedPlayer);
             collision.gameObject.GetComponent<KnutKnightController>().died();
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KnutKnightController : MonoBehaviour
 {
+    public AudioSource audio;
+    public AudioClip clip;
     public Animator anim;
     public float speed;             
     private Rigidbody2D rb2d;
@@ -66,17 +68,18 @@ public class KnutKnightController : MonoBehaviour
         rb2d.velocity = Vector2.zero;
         if(!dead) {
             dead = true;
+            audio.PlayOneShot(clip);
             StartCoroutine(fallDeath());
         }
     }
 
     IEnumerator dragonDeath() {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(2f);
         SceneHandler.GetInstance().restartScene();
     }
 
     IEnumerator fallDeath() {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(2f);
         SceneHandler.GetInstance().restartScene();
     }
 
