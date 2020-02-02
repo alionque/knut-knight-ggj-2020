@@ -29,7 +29,22 @@ public class KnutKnightController : MonoBehaviour
             rb2d.velocity = (jumpHeight);
         }
 
-      
+        //Store the current horizontal input in the float moveHorizontal.
+        float moveHorizontal = Input.GetAxis("KnutHori");
+
+        if (moveHorizontal < 0) {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        } else {
+            transform.rotation = Quaternion.identity;
+        }
+        anim.SetFloat("vel", Mathf.Abs(moveHorizontal));
+        //Use the two store floats to create a new Vector2 variable movement.
+        Vector2 movement = new Vector2(moveHorizontal * speed, rb2d.velocity.y);
+
+        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
+        rb2d.velocity = (movement);
+
+
     }
     bool isGrounded() {
 
@@ -40,17 +55,17 @@ public class KnutKnightController : MonoBehaviour
 
     public void died() {
         rb2d.velocity = Vector2.zero;
-        dead = true;
         anim.SetTrigger("die");
         if (!dead) {
+            dead = true;
             StartCoroutine(dragonDeath());
         }
     }
 
     public void fallDied() {
         rb2d.velocity = Vector2.zero;
-        dead = true;
         if(!dead) {
+            dead = true;
             StartCoroutine(fallDeath());
         }
     }
@@ -68,23 +83,7 @@ public class KnutKnightController : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-        if(dead) {
-            return;
-        }
-        //Store the current horizontal input in the float moveHorizontal.
-        float moveHorizontal = Input.GetAxis("KnutHori");
-
-        if(moveHorizontal < 0) {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        } else {
-            transform.rotation = Quaternion.identity;
-        }
-        anim.SetFloat("vel", Mathf.Abs(moveHorizontal));
-        //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2(moveHorizontal * speed , rb2d.velocity.y);
-
-        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        rb2d.velocity = (movement);
+        
 
 
     }
