@@ -20,8 +20,12 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
+    public void nextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void restartScene() {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadScene(string name) {
@@ -30,5 +34,9 @@ public class SceneHandler : MonoBehaviour
 
     public void LoadScene(int index) {
         SceneManager.LoadScene(index);
+    }
+
+    public void Quit() {
+        Application.Quit();
     }
 }
