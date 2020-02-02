@@ -20,13 +20,20 @@ public class DragonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.right * spd * Time.deltaTime; //This will only move right and when things collide with it it will then react to those things.
+        if(canMove) {
+            transform.position += Vector3.right * spd * Time.deltaTime; //This will only move right and when things collide with it it will then react to those things.
+        }
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag.Equals("Player")) {
             //Game end logic
-        } else {
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if(!collision.tag.Equals("Player")) {
             Destroy(collision.gameObject); // BLOW UP DA WORLD
         }
     }

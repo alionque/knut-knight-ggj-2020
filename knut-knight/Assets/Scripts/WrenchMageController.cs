@@ -5,15 +5,15 @@ using UnityEngine;
 public class WrenchMageController : MonoBehaviour
 {
     public string wrenchHoriInputName;
-    public string wrenchVertInputString;
+    public string wrenchVertInputName;
+    public string wrenchSpawnInputName;
     public float spd = 5f;
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         Vector3 dir = new Vector3();
-        dir.x = 0; //Replace w a remote horizontal check
-        dir.y = 0; //Replace w a remote vertical check
-        if (false) { //Check for place button pressed
+        dir.x = Input.GetAxis(wrenchHoriInputName);
+        dir.y = Input.GetAxis(wrenchVertInputName);
+        if (Input.GetButtonDown(wrenchSpawnInputName)) {
             maybeUseSpawnableObject();
         }
 
