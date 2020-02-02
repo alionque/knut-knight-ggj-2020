@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransitionHandler : MonoBehaviour
+public class SceneHandler : MonoBehaviour
 {
-    private static SceneTransitionHandler INSTANCE;
+    private static SceneHandler INSTANCE;
 
-    public static SceneTransitionHandler GetInstance() {
+    public static SceneHandler GetInstance() {
         return INSTANCE;
     }
 
@@ -18,6 +18,10 @@ public class SceneTransitionHandler : MonoBehaviour
         } else {
             Destroy(this);
         }
+    }
+
+    public void restartScene() {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadScene(string name) {

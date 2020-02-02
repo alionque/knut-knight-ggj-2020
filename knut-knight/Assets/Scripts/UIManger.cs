@@ -6,7 +6,6 @@ using UnityEngine;
 public class UIManger : MonoBehaviour
 {
    public GameObject myCanvas;
-   public SceneTransitionHandler sth;
 
 
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class UIManger : MonoBehaviour
     }
     public void quitGame()
     {
-        sth.LoadScene(0);
+        SceneHandler.GetInstance().restartScene();
     }
     void handlePausePressed()
     {
