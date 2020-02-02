@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4840446229464539155}
   - component: {fileID: 4840446229464539167}
   - component: {fileID: 2115802826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knut Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4840446230585247703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Butt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

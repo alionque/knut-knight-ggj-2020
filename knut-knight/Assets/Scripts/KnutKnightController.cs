@@ -39,13 +39,38 @@ public class KnutKnightController : MonoBehaviour
     }
 
     public void died() {
+        rb2d.velocity = Vector2.zero;
         dead = true;
         anim.SetTrigger("die");
+        if (!dead) {
+            StartCoroutine(dragonDeath());
+        }
+    }
+
+    public void fallDied() {
+        rb2d.velocity = Vector2.zero;
+        dead = true;
+        if(!dead) {
+            StartCoroutine(fallDeath());
+        }
+    }
+
+    IEnumerator dragonDeath() {
+        yield return new WaitForSecondsRealtime(3f);
+        SceneHandler.GetInstance().restartScene();
+    }
+
+    IEnumerator fallDeath() {
+        yield return new WaitForSecondsRealtime(3f);
+        SceneHandler.GetInstance().restartScene();
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
+        if(dead) {
+            return;
+        }
         //Store the current horizontal input in the float moveHorizontal.
         float moveHorizontal = Input.GetAxis("KnutHori");
 
