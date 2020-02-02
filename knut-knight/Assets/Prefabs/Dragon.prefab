@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7802771658787082027}
   - component: {fileID: 7802771658787082026}
   - component: {fileID: 1146163432}
+  - component: {fileID: 1559909178}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 29462dbd7ad7e2549836be4e93da675a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd2a1a726f5413e41bf16e4c43e5ab56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065d70d4026ccd747a4cd3772fa753b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1559909178}
   spd: 3
 --- !u!50 &1146163432
 Rigidbody2D:
@@ -144,3 +146,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1559909178
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7802771658787082021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41fedce131c0df940b0df380f8248f04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

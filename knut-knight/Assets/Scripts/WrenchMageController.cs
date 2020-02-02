@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WrenchMageController : MonoBehaviour
 {
+    public Animator anim;
     public string wrenchHoriInputName;
     public string wrenchVertInputName;
     public string wrenchSpawnInputName;
@@ -24,6 +25,7 @@ public class WrenchMageController : MonoBehaviour
        SpawnablePlatform platform = WrenchMageInventory.GetInstance().GetSpawnablePlatform();
 
         if(platform != null) {
+            anim.SetTrigger("spawning");
             Instantiate(platform, transform.position, Quaternion.identity);
         }
     }

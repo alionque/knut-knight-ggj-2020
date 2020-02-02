@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class KnutKnightController : MonoBehaviour
 {
+    public Animator anim;
     public float speed;             
     private Rigidbody2D rb2d;
     public Vector2 jumpHeight;
     public GameObject bottom;
+    private bool dead = false;
 
     // Use this for initialization
     void Start()
@@ -16,9 +18,13 @@ public class KnutKnightController : MonoBehaviour
     }
 
     void Update() {
+        if(dead) {
+            return;
+        }
 
         if (isGrounded() && Input.GetButtonDown("Jump")) //makes player jump
         {
+            anim.SetTrigger("jump");
             jumpHeight.x = rb2d.velocity.x;
             rb2d.velocity = (jumpHeight);
         }
@@ -32,6 +38,10 @@ public class KnutKnightController : MonoBehaviour
         return Physics2D.Raycast(bottom.transform.position, Vector2.down, 0.5f ,layerMask);
     }
 
+    public void died() {
+        dead = true;
+        anim.SetTrigger("die");
+    }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
@@ -39,6 +49,12 @@ public class KnutKnightController : MonoBehaviour
         //Store the current horizontal input in the float moveHorizontal.
         float moveHorizontal = Input.GetAxis("KnutHori");
 
+        if(moveHorizontal < 0) {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        } else {
+            transform.rotation = Quaternion.identity;
+        }
+        anim.SetFloat("vel", Mathf.Abs(moveHorizontal));
         //Use the two store floats to create a new Vector2 variable movement.
         Vector2 movement = new Vector2(moveHorizontal * speed , rb2d.velocity.y);
 

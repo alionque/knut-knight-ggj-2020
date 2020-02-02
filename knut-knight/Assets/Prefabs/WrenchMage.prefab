@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d600a67333e9f468e09242bbadec83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 8600849510972053460}
   wrenchHoriInputName: KnutHori
   wrenchVertInputName: KnutVert
   wrenchSpawnInputName: Fire2

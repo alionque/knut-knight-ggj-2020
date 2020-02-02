@@ -9,6 +9,7 @@ public class DragonController : MonoBehaviour
         canMove = true;
     }
 
+    public Animator anim;
     public float spd = 3f;
 
     // Start is called before the first frame update
@@ -20,7 +21,9 @@ public class DragonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canMove) {
+        anim.SetBool("moving", canMove);
+    
+        if (canMove) {
             transform.position += Vector3.right * spd * Time.deltaTime; //This will only move right and when things collide with it it will then react to those things.
         }
       
@@ -28,7 +31,7 @@ public class DragonController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag.Equals("Player")) {
-            //Game end logic
+            collision.gameObject.GetComponent<KnutKnightController>().died();
         }
     }
 

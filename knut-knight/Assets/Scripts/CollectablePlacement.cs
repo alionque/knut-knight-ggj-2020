@@ -7,7 +7,7 @@ public class CollectablePlacement : MonoBehaviour
     public SpawnablePlatform spawnablePrefab;
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.tag.Equals("Platformer")) {
+        if(collision.tag.Equals("Player")) {
             WrenchMageInventory.GetInstance().addItem(spawnablePrefab);
             Destroy(this.gameObject);
         }
