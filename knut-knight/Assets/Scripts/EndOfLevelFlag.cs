@@ -6,7 +6,7 @@ public class EndOfLevelFlag : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag.Equals("Player")) {
-            SceneHandler.GetInstance().nextScene();
+            SceneHandler.GetInstance().LoadScene("MainMenu");
         }
     }
 }
