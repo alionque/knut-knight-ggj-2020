@@ -32,6 +32,7 @@ public class WrenchMageInventory : MonoBehaviour
         }
         SpawnablePlatform result = inventory[currentViewingIndex];
         inventory.RemoveAt(currentViewingIndex);
+        currentViewingIndex--;
         return result;
     }
 
