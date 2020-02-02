@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 8600849510972053460}
-  wrenchHoriInputName: KnutHori
-  wrenchVertInputName: KnutVert
+  wrenchHoriInputName: WrenchHori
+  wrenchVertInputName: WrenchVert
   wrenchSpawnInputName: Fire2
   spd: 10
 --- !u!114 &8600849511814308008

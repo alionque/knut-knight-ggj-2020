@@ -321,6 +321,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8600849511814308011, guid: 622536a25b2586b4e853fa5a52f3655a,
+        type: 3}
+      propertyPath: wrenchHoriInputName
+      value: WrenchHori
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600849511814308011, guid: 622536a25b2586b4e853fa5a52f3655a,
+        type: 3}
+      propertyPath: wrenchVertInputName
+      value: WrenchVert
+      objectReference: {fileID: 0}
     - target: {fileID: 8600849511814308014, guid: 622536a25b2586b4e853fa5a52f3655a,
         type: 3}
       propertyPath: m_Name
