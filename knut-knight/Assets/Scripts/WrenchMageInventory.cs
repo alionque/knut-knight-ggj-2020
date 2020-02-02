@@ -15,7 +15,6 @@ public class WrenchMageInventory : MonoBehaviour
             Destroy(this);
         } else {
             INSTANCE = this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
 

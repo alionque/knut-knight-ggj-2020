@@ -87,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4251471627883280140}
   - component: {fileID: 4251471627883280141}
+  - component: {fileID: 410220275450964654}
   m_Layer: 0
   m_Name: PauseCanvasHandler
   m_TagString: Untagged
@@ -123,7 +124,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCanvas: {fileID: 4251471628241180531}
-  sth: {fileID: 0}
+--- !u!114 &410220275450964654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251471627883280138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1510991a9ac96b447b6b41f83624d169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4251471628022751672
 GameObject:
   m_ObjectHideFlags: 0

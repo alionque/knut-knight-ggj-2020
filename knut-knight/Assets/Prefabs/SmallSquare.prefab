@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3603515190566549609}
   - component: {fileID: 3603515190566549614}
   - component: {fileID: 3603515190566549615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
